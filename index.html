@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>千歳烏山 マンツーマン マシンピラティス</title>
+  <style>
+    body { 
+      font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif; 
+      margin:0; padding:0; line-height:1.6; 
+      background:#fff;
+      color:#333;
+      font-size:16px;
+    }
+
+    header { 
+      background:linear-gradient(135deg, #ff7b7b, #ffb27b);
+      color:#fff; 
+      padding:60px 20px; 
+      text-align:center; 
+    }
+
+    header h1 { font-size: 28px; margin-bottom: 10px; }
+    header p { font-size: 18px; margin:0; }
+
+    section { 
+      padding:40px 20px; 
+      max-width:800px; 
+      margin:30px auto;
+      background:#f9f9f9; 
+      border-radius:12px;
+      opacity: 0;               
+      transform: translateY(30px); 
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    section:nth-of-type(1) {
+      background: linear-gradient(135deg, #fff7f7, #ffe6e6);
+    }
+    section:nth-of-type(2) {
+      background: linear-gradient(135deg, #f9f9f9, #fff0f0);
+    }
+
+    h2 { 
+      font-size:22px; 
+      margin-bottom:10px;
+      border-left:5px solid #ff7b7b;
+      padding-left:10px;
+    }
+    h2 span { color:#ff4b4b; }
+
+    ul { padding-left:20px; }
+    section p { margin:10px 0 20px 0; }
+
+    section img {
+      display:block;
+      margin:15px auto;
+      width:100%;
+      max-width:100%;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    section img:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ====== CTA ====== */
+    .cta {
+      background: linear-gradient(135deg, #ff4b4b, #ff1a1a); 
+      color: #fff;
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 40px;
+      border-radius: 16px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      opacity: 0;               
+      transform: translateY(30px); 
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .cta h2 { 
+      font-size:28px; 
+      margin-bottom:15px; 
+      border:none;   /* ← 左ボーダーを完全に消す */
+      padding-left:0;
+    }
+    .cta p { font-size: 18px; margin: 10px 0; }
+
+    .cta-btn {
+      display:inline-block;
+      background:#fff;
+      color:#ff4b4b;
+      font-weight:bold;
+      padding:18px 36px;
+      border-radius:8px;
+      text-decoration:none;
+      font-size:18px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.12) rotate(-2deg);
+      background: linear-gradient(135deg, #fff0f0, #ffd6d6);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.4);
+    }
+    .cta-btn:active {
+      transform: scale(0.95) rotate(0deg);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* CTA 脈打ちアニメーション */
+    .cta.visible {
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>千歳烏山駅すぐ｜マンツーマン マシンピラティス</h1>
+    <p>初心者・産後ケア・体幹強化まで対応</p>
+  </header>
+
+  <section>
+    <h2>あなたに合わせた完全パーソナル指導</h2>
+    <img src="images/pilates1.jpg" alt="マンツーマン指導">
+    <p>最新のマシンを使用し、<span style="color:#ff4b4b;">専門トレーナーが一人ひとりに合わせて指導</span>します。</p>
+  </section>
+
+  <section>
+    <h2>こんな方に <span>おすすめ</span></h2>
+    <img src="images/pilates2.png" alt="ピラティス体験イメージ">
+    <ul>
+      <li>産後の体型を整えたい</li>
+      <li>腰痛や姿勢の改善をしたい</li>
+      <li>効率よく体幹を鍛えたい</li>
+    </ul>
+    <img src="images/pilates3.png" alt="ピラティス体験イメージ">
+  </section>
+
+  <section class="cta">
+    <h2>まずは体験レッスン（60分）</h2>
+    <p>初心者・産後ケアも安心！完全マンツーマン指導</p>
+    <p><a href="#" class="cta-btn">今すぐ予約する</a></p>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const sections = document.querySelectorAll("section");
+
+      function showOnScroll() {
+        const triggerPoint = window.innerHeight * 0.8;
+        sections.forEach(sec => {
+          const secTop = sec.getBoundingClientRect().top;
+          if (secTop < triggerPoint) {
+            sec.classList.add("visible");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", showOnScroll);
+      showOnScroll();
+    });
+  </script>
+</body>
+</html>
