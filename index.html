@@ -1,249 +1,109 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <!-- Google Tag Manager：このスニペットは GTM コンテナを読み込むための標準コードです。<head> の最初に置きます。 -->
-  <script>
-    // 以下は GTM 標準スニペット（自動生成されたコード）です。編集しないでください。
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];                                       // dataLayer 配列がなければ作る
-      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'}); // 初期イベントを push
-      var f=d.getElementsByTagName(s)[0],                  // 最初の script 要素を取得
-          j=d.createElement(s),                            // 新しい script 要素を作成
-          dl=l!='dataLayer'?'&l='+l:'';                    // dataLayer 名がデフォルトでなければパラメータを追加
-      j.async=true;                                        // 非同期ロードにする
-      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl; // GTM スクリプトの URL を設定
-      f.parentNode.insertBefore(j,f);                      // 現在の script の直前に挿入してロード
-    })(window,document,'script','dataLayer','GTM-NBD56HF7');    // 'GTM-XXXX' をあなたのコンテナIDに置換
-  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NBD56HF7');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- ページ文字コード：日本語を正しく表示するための宣言 -->
   <meta charset="UTF-8">
-  <!-- ビューポート設定：スマホで横幅に合わせて縮尺するため -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ブラウザのタブに表示されるタイトル -->
   <title>千歳烏山 マンツーマン マシンピラティス</title>
-
   <style>
-    /* ======== 全体（body） ======== */
-    body { 
-      font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif; /* 使用フォントを指定 */
-      margin: 0;                  /* ページ外側の余白を消す */
-      padding: 0;                 /* 内側余白を消す（ここではbodyの余白） */
-      line-height: 1.6;           /* 行の高さ（可読性向上） */
-      background: #fff;           /* 背景色を白に */
-      color: #333;                /* ベースの文字色を濃いグレーに */
-      font-size: 16px;            /* 基本の文字サイズ */
-    }
+    body { font-family: "Hiragino Kaku Gothic ProN", "メイリオ", sans-serif; margin:0; padding:0; line-height:1.6; background:#fff; color:#333; font-size:16px; }
 
-    /* ======== ヘッダー ======== */
-    header {
-      background: linear-gradient(135deg, #ff7b7b, #ffb27b); /* ヘッダーのグラデ背景 */
-      color: #fff;                 /* ヘッダー内の文字を白に */
-      padding: 60px 20px;          /* 上下左右の内側余白 */
-      text-align: center;          /* テキストを中央揃え */
-    }
-    header h1 { font-size: 28px; margin-bottom: 10px; } /* メイン見出しのサイズと下余白 */
-    header p  { font-size: 18px; margin: 0; }          /* サブテキストのサイズ・余白リセット */
+    header { background:linear-gradient(135deg, #ff7b7b, #ffb27b); color:#fff; padding:60px 20px; text-align:center; }
+    header h1 { font-size:28px; margin-bottom:10px; }
+    header p { font-size:18px; margin:0; }
 
-    /* ======== セクション共通 ======== */
-    section {
-      padding: 40px 20px;         /* セクション内の上下左右の余白 */
-      max-width: 800px;           /* 最大横幅を800pxに制限 */
-      margin: 30px auto;          /* 上下余白30px、左右中央寄せ */
-      background: #f9f9f9;        /* セクション背景（薄いグレー） */
-      border-radius: 12px;        /* 角の丸み */
-      /* スクロールフェード用スタート状態（透明で下にずらす） */
-      opacity: 0;                 
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* アニメーションの仕様 */
-    }
-    /* visible クラスが付いたらフェードインして元位置へ */
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section { padding:40px 20px; max-width:800px; margin:30px auto; background:#f9f9f9; border-radius:12px; opacity:0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    section.visible { opacity:1; transform: translateY(0); }
+    section:nth-of-type(1) { background: linear-gradient(135deg, #fff7f7, #ffe6e6); }
+    section:nth-of-type(2) { background: linear-gradient(135deg, #f9f9f9, #fff0f0); }
 
-    /* 個別セクションの背景差し替え（1つ目と2つ目） */
-    section:nth-of-type(1) { background: linear-gradient(135deg, #fff7f7, #ffe6e6); } /* 1つ目の背景 */
-    section:nth-of-type(2) { background: linear-gradient(135deg, #f9f9f9, #fff0f0); } /* 2つ目の背景 */
+    h2 { font-size:22px; margin-bottom:10px; border-left:5px solid #ff7b7b; padding-left:10px; }
+    h2 span { color:#ff4b4b; }
+    ul { padding-left:20px; }
+    section p { margin:10px 0 20px 0; }
+    section img { display:block; margin:15px auto; width:100%; max-width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    section img:hover { transform: translateY(-3px); }
 
-    /* ======== 見出し（h2） ======== */
-    h2 {
-      font-size: 22px;           /* h2 の文字サイズ */
-      margin-bottom: 10px;       /* 見出し下の余白 */
-      border-left: 5px solid #ff7b7b; /* 左に色付きのラインを引く装飾 */
-      padding-left: 10px;        /* 左ラインとテキストの間隔 */
-    }
-    h2 span { color: #ff4b4b; }   /* h2 内の <span> をアクセントカラーに */
-
-    /* ======== リスト ======== */
-    ul { padding-left: 20px; }    /* ul の左余白（インデント） */
-
-    /* ======== 段落（section 内） ======== */
-    section p { margin: 10px 0 20px 0; } /* 上10 / 右0 / 下20 / 左0 の余白 */
-
-    /* ======== セクション内画像 ======== */
-    section img {
-      display: block;             /* ブロック要素化（中央寄せを効かせるため） */
-      margin: 15px auto;          /* 上下15px、左右自動で中央寄せ */
-      width: 100%;                /* 可変幅：親要素に合わせる */
-      max-width: 100%;            /* 最大幅をはみ出さないように */
-      border-radius: 12px;        /* 角丸 */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* 画像に影を付ける */
-      transition: transform 0.3s ease; /* ホバー時の動きの滑らかさ */
-    }
-    /* 画像ホバー時：少し上に浮く見た目 */
-    section img:hover {
-      transform: translateY(-3px);
-    }
-
-    /* ======== CTA ボックス（行動喚起） ======== */
-    .cta {
-      background: linear-gradient(135deg, #ff4b4b, #ff1a1a); /* CTA の赤系グラデ */
-      color: #fff;                /* 中の文字は白 */
-      text-align: center;         /* 中央寄せ */
-      padding: 50px 20px;         /* 内側余白 */
-      margin-top: 40px;           /* 上側の余白（前セクションとの間） */
-      border-radius: 16px;        /* 角丸 */
-      box-shadow: 0 12px 24px rgba(0,0,0,0.3); /* CTA に強めの影 */
-      /* CTA のフェードイン初期状態（section と同じ挙動に合わせる） */
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    /* CTA 内の見出しは左ボーダーを消している（h2 の共通装飾と競合しないよう） */
-    .cta h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-      border: none;
-      padding-left: 0;
-    }
-    .cta p { font-size: 18px; margin: 10px 0; } /* CTA 内の段落スタイル */
-
-    /* ======== CTA 内のボタン群（縦並び） ======== */
-    .cta-buttons p { margin: 15px 0; } /* 各ボタンの上下間隔 */
-
-    /* ======== CTA ボタンの見た目 ======== */
-    .cta-btn {
-      display: inline-block;      /* ブロック的に表示しつつ横並びも可（ここでは縦に並ぶ） */
-      background: #fff;           /* ボタン背景を白に */
-      color: #ff4b4b;             /* テキストをCTAに合わせた赤に */
-      font-weight: bold;          /* 太字 */
-      padding: 18px 36px;         /* 内側余白（縦18px、横36px） */
-      border-radius: 8px;         /* 角丸 */
-      text-decoration: none;      /* 下線を消す */
-      font-size: 18px;            /* ボタン文字サイズ */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* ホバーの滑らかさ等 */
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* 軽い影 */
-    }
-    /* ボタンホバー：拡大＋傾き＋光沢風の背景変化 */
-    .cta-btn:hover {
-      transform: scale(1.12) rotate(-2deg);
-      background: linear-gradient(135deg, #fff0f0, #ffd6d6);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.4);
-    }
-    /* ボタンクリック（active）時：押し込み効果 */
-    .cta-btn:active {
-      transform: scale(0.95);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    /* ======== CTA の脈打ちアニメーション（visible 時のみ） ======== */
-    .cta.visible {
-      animation: pulse 1.5s ease-in-out infinite; /* 見えたら pulse を無限に実行 */
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
-    }
+    .cta { background: linear-gradient(135deg, #ff4b4b, #ff1a1a); color:#fff; text-align:center; padding:50px 20px; margin-top:40px; border-radius:16px; box-shadow:0 12px 24px rgba(0,0,0,0.3); opacity:0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .cta.visible { animation: pulse 1.5s ease-in-out infinite; }
+    .cta h2 { font-size:28px; margin-bottom:15px; border:none; padding-left:0; }
+    .cta p { font-size:18px; margin:10px 0; }
+    .cta-btn { display:inline-block; background:#fff; color:#ff4b4b; font-weight:bold; padding:18px 36px; border-radius:8px; text-decoration:none; font-size:18px; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow:0 4px 8px rgba(0,0,0,0.2); }
+    .cta-buttons p { margin:15px 0; }
+    .cta-btn:hover { transform: scale(1.12) rotate(-2deg); background: linear-gradient(135deg,#fff0f0,#ffd6d6); box-shadow:0 14px 28px rgba(0,0,0,0.4); }
+    .cta-btn:active { transform: scale(0.95) rotate(0deg); box-shadow:0 4px 8px rgba(0,0,0,0.2); }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
   </style>
 </head>
 <body>
-  <!-- ページ上部のヘッダー -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBD56HF7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <header>
-    <h1>千歳烏山駅すぐ｜マンツーマン マシンピラティス</h1> <!-- 主見出し -->
-    <p>初心者・産後ケア・体幹強化まで対応</p>                <!-- サブキャッチ -->
+    <h1>千歳烏山駅すぐ｜マンツーマン マシンピラティス</h1>
+    <p>初心者・産後ケア・体幹強化まで対応</p>
   </header>
 
-  <!-- ======= セクション① ======= -->
   <section>
-    <h2>あなたに合わせた完全パーソナル指導</h2> <!-- セクション見出し -->
-    <img src="images/pilates1.jpg" alt="マンツーマン指導"> <!-- 画像：alt は簡潔に内容を記載 -->
-    <p>最新のマシンを使用し、<span style="color:#ff4b4b;">専門トレーナーが一人ひとりに合わせて指導</span>します。</p> <!-- 説明文 -->
+    <h2>あなたに合わせた完全パーソナル指導</h2>
+    <img src="images/pilates1.jpg" alt="マンツーマン指導">
+    <p>最新のマシンを使用し、<span style="color:#ff4b4b;">専門トレーナーが一人ひとりに合わせて指導</span>します。</p>
   </section>
 
-  <!-- ======= セクション② ======= -->
   <section>
-    <h2>こんな方に <span>おすすめ</span></h2> <!-- セクション見出し（強調は span） -->
-    <img src="images/pilates2.png" alt="ピラティス体験イメージ"> <!-- 画像2 -->
+    <h2>こんな方に <span>おすすめ</span></h2>
+    <img src="images/pilates2.png" alt="ピラティス体験イメージ">
     <ul>
-      <li>産後の体型を整えたい</li>   <!-- リスト項目 -->
+      <li>産後の体型を整えたい</li>
       <li>腰痛や姿勢の改善をしたい</li>
       <li>効率よく体幹を鍛えたい</li>
     </ul>
-    <img src="images/pilates3.png" alt="ピラティス体験イメージ"> <!-- 画像3 -->
+    <img src="images/pilates3.png" alt="ピラティス体験イメージ">
   </section>
 
-  <!-- ======= CTA（行動喚起）セクション ======= -->
   <section class="cta">
-    <h2>まずは体験レッスン（60分）</h2> <!-- CTA 見出し -->
-    <p>初心者・産後ケアも安心！完全マンツーマン指導</p> <!-- CTA 説明 -->
-
-    <!-- ボタン群（縦並び） -->
+    <h2>まずは体験レッスン（60分）</h2>
+    <p>初心者・産後ケアも安心！完全マンツーマン指導</p>
     <div class="cta-buttons">
-      <!-- Googleフォーム（外部リンクを新しいタブで開く） -->
-      <p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSffIEVvt4OIZQDQ4cSURQFM8gmjvEoMZNDhgRkQaZQTCurZIw/viewform?pli=1"
-           class="cta-btn" target="_blank" rel="noopener noreferrer">Googleフォームで申し込む</a>
-      </p>
+      <!-- Googleフォーム埋め込み（送信後サンクスページに遷移） -->
+      <iframe id="googleForm" src="https://docs.google.com/forms/d/e/1FAIpQLSffIEVvt4OIZQDQ4cSURQFM8gmjvEoMZNDhgRkQaZQTCurZIw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
 
-      <!-- LINE 友だち追加リンク（外部） -->
-      <p>
-        <a href="https://line.me/ti/p/hFWv7n8x_c" class="cta-btn" target="_blank" rel="noopener noreferrer">LINEで予約する</a>
-      </p>
-
-      <!-- メールリンク（mailto:）に件名・本文テンプレを付与 -->
-      <p>
-        <a href="mailto:sekineshinjikoukoku@gmail.com?subject=体験レッスン予約&body=お名前：%0D%0Aご希望日時：%0D%0Aその他："
-           class="cta-btn">メールで問い合わせる</a>
-      </p>
+      <p><a href="https://line.me/ti/p/hFWv7n8x_c" class="cta-btn" target="_blank">LINEで予約する</a></p>
+      <p><a href="mailto:sekineshinjikoukoku@gmail.com?subject=体験レッスン予約&body=お名前：%0D%0Aご希望日時：%0D%0Aその他：" class="cta-btn">メールで問い合わせる</a></p>
     </div>
   </section>
 
-  <!-- ======= スクロールで要素をフェードインさせるためのスクリプト ======= -->
   <script>
+    // スクロール時にセクションをフェードイン
     document.addEventListener("DOMContentLoaded", function() {
-      // 全ての section 要素を取得（ヘッダーは除くが、ここでは全 section を対象）
       const sections = document.querySelectorAll("section");
-
-      // スクロール時に呼ばれる関数（triggerPoint より上に来たら visible を付与）
       function showOnScroll() {
-        // 画面高さの 80% をトリガー地点とする（この位置に来たら表示開始）
         const triggerPoint = window.innerHeight * 0.8;
-
-        // 各セクションの位置をチェックして visible クラスを付与
         sections.forEach(sec => {
-          const secTop = sec.getBoundingClientRect().top; // 要素の上端がビューポートのどこにあるか
-          if (secTop < triggerPoint) {
-            sec.classList.add("visible"); // CSS の .visible でフェードインする
-          }
+          const secTop = sec.getBoundingClientRect().top;
+          if (secTop < triggerPoint) sec.classList.add("visible");
         });
       }
-
-      // スクロール時に関数を呼ぶイベントを登録
       window.addEventListener("scroll", showOnScroll);
-
-      // 初回ロード時にも判定を行い、既に画面内なら表示させる
       showOnScroll();
+    });
+
+    // Googleフォーム送信後にサンクスページにリダイレクト
+    const formIframe = document.getElementById("googleForm");
+    window.addEventListener("message", (event) => {
+      if(event.origin !== "https://docs.google.com") return;
+      if(event.data.includes("submitted")) {
+        window.location.href = "thanks.html"; // サンクスページ
+      }
     });
   </script>
 </body>
-
-<!-- GTM（no-js）: JavaScript無効時に GTM を呼ぶための iframe -->
-<noscript>
-  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBD56HF7"
-          height="0" width="0" style="display:none;visibility:hidden"></iframe>
-</noscript>
 </html>
