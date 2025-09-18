@@ -73,14 +73,18 @@
     <h2>まずは体験レッスン（60分）</h2>
     <p>初心者・産後ケアも安心！完全マンツーマン指導</p>
     <div class="cta-buttons">
-      <!-- Googleフォーム埋め込み（送信後サンクスページに遷移） -->
-      <iframe id="googleForm" src="https://docs.google.com/forms/d/e/1FAIpQLSffIEVvt4OIZQDQ4cSURQFM8gmjvEoMZNDhgRkQaZQTCurZIw/viewform?embedded=true" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
-
+      <!-- Googleフォーム埋め込み -->
+      <iframe id="googleForm"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSffIEVvt4OIZQDQ4cSURQFM8gmjvEoMZNDhgRkQaZQTCurZIw/viewform?embedded=true"
+        width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">
+        読み込んでいます…
+      </iframe>
+  
       <p><a href="https://line.me/ti/p/hFWv7n8x_c" class="cta-btn" target="_blank">LINEで予約する</a></p>
       <p><a href="mailto:sekineshinjikoukoku@gmail.com?subject=体験レッスン予約&body=お名前：%0D%0Aご希望日時：%0D%0Aその他：" class="cta-btn">メールで問い合わせる</a></p>
     </div>
   </section>
-
+  
   <script>
     // スクロール時にセクションをフェードイン
     document.addEventListener("DOMContentLoaded", function() {
@@ -95,13 +99,18 @@
       window.addEventListener("scroll", showOnScroll);
       showOnScroll();
     });
-
+  
     // Googleフォーム送信後にサンクスページにリダイレクト
     const formIframe = document.getElementById("googleForm");
-    window.addEventListener("message", (event) => {
-      if(event.origin !== "https://docs.google.com") return;
-      if(event.data.includes("submitted")) {
-        window.location.href = "thanks.html"; // サンクスページ
+    formIframe.addEventListener("load", function() {
+      try {
+        // フォーム完了後のページには "フォームを記録しました" の文言が含まれる
+        const innerDoc = formIframe.contentDocument || formIframe.contentWindow.document;
+        if (innerDoc && innerDoc.body.innerText.includes("フォームを記録しました")) {
+          window.location.href = "thanks.html"; // サンクスページへ遷移
+        }
+      } catch(e) {
+        // クロスドメイン制約で直接読めない場合 → そのままiframeのロードを監視
       }
     });
   </script>
